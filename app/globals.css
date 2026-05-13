@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-olive-950: #1f2611;
+  --color-olive-900: #2a3318;
+  --color-olive-800: #3a4622;
+  --color-olive-700: #4f5d2f;
+  --color-olive-600: #5f7039;
+  --color-olive-500: #6f8345;
+  --color-olive-400: #8b9d6b;
+  --color-olive-300: #a8b68a;
+  --color-olive-200: #c7d0ad;
+  --color-olive-100: #e2e7ce;
+  --color-olive-50:  #f1f3e6;
+  --color-cream: #faf9f6;
+  --color-bone:  #f4f2eb;
+  --color-charcoal: #1a1f14;
+  --color-charcoal-soft: #353a2c;
+
+  --font-serif: var(--font-cormorant);
+  --font-sans:  var(--font-inter);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: #1a1f14;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: #4f5d2f;
+  color: #faf9f6;
+}
+
+@keyframes marquee {
+  0%   { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+.animate-marquee {
+  animation: marquee 45s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(10px); }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 2.2s ease-in-out infinite;
+}
+
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  10%      { transform: translate(-2%, -2%); }
+  30%      { transform: translate(2%, -2%); }
+  50%      { transform: translate(-1%, 2%); }
+  70%      { transform: translate(2%, 1%); }
+  90%      { transform: translate(-2%, 0); }
+}
+
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  background-image: radial-gradient(rgba(79, 93, 47, 0.08) 1px, transparent 1px);
+  background-size: 3px 3px;
+  opacity: 0.4;
+  animation: grain 8s steps(6) infinite;
+  pointer-events: none;
+}
