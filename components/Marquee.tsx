@@ -104,12 +104,12 @@ export default function Marquee() {
   const loop = [...stack, ...stack];
   return (
     <section className="relative bg-cream py-10 lg:py-16 border-y border-olive-100">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10 mb-7 lg:mb-10 flex items-center justify-center gap-4">
-        <span className="h-px w-10 bg-olive-200" />
-        <span className="text-[10px] font-semibold tracking-[0.28em] uppercase text-olive-700/70">
+      <div className="mx-auto max-w-7xl px-4 lg:px-10 mb-7 lg:mb-10 flex items-center justify-center gap-3 sm:gap-4">
+        <span className="hidden sm:block h-px w-10 bg-olive-200" />
+        <span className="text-[10px] font-semibold tracking-[0.2em] sm:tracking-[0.28em] uppercase text-olive-700/70 whitespace-nowrap">
           Built with the modern toolkit
         </span>
-        <span className="h-px w-10 bg-olive-200" />
+        <span className="hidden sm:block h-px w-10 bg-olive-200" />
       </div>
 
       <div
