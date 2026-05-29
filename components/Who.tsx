@@ -96,7 +96,7 @@ export default function Who() {
                 >
                   <span
                     aria-hidden
-                    className="pointer-events-none absolute -right-2 -top-4 font-serif text-7xl font-light text-olive-100 transition-all duration-500 group-hover:text-olive-200 group-hover:-translate-y-1"
+                    className="pointer-events-none absolute right-4 top-3 font-serif text-5xl font-light leading-none text-olive-100 transition-all duration-500 group-hover:text-olive-200 group-hover:-translate-y-0.5"
                   >
                     {p.num}
                   </span>

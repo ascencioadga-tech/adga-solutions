@@ -76,3 +76,25 @@ body {
   animation: grain 8s steps(6) infinite;
   pointer-events: none;
 }
+
+/* Respect users who prefer reduced motion: stop infinite/looping motion
+   (marquee ticker, scroll cue, grain) and collapse transitions. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-marquee,
+  .animate-bounce-slow,
+  .grain::before {
+    animation: none !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

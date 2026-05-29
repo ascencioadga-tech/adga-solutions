@@ -97,6 +97,64 @@ export default function CaseStudy() {
             </div>
           </div>
         </div>
+
+        {/* Product showcase — framed screenshots of the real tool */}
+        <div className="mt-16 lg:mt-20">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6 }}
+            className="flex items-center gap-3 mb-8"
+          >
+            <span className="text-xs font-semibold tracking-[0.25em] uppercase text-olive-300">
+              See it in action
+            </span>
+            <span className="h-px flex-1 bg-cream/10" />
+          </motion.div>
+
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-8">
+            {[
+              {
+                src: "/dqs-availability.png",
+                url: "adgasolutions.com/daily-quote",
+                alt: "The Daily Quote System availability screen, with prices set per commodity size",
+                caption: "Set today's prices per size — type a dollar amount, “Market,” or “Call.”",
+              },
+              {
+                src: "/dqs-quote-sheet.png",
+                url: "adgasolutions.com/daily-quote/send",
+                alt: "The send screen showing a branded daily quote sheet ready to email to buyers",
+                caption: "Pick recipients and send a branded quote sheet in seconds.",
+              },
+            ].map((shot, i) => (
+              <motion.figure
+                key={shot.src}
+                initial={{ opacity: 0, y: 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.7, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
+                className="group"
+              >
+                <div className="overflow-hidden rounded-xl border border-cream/15 bg-cream/[0.03] shadow-2xl shadow-black/40 transition-transform duration-500 group-hover:-translate-y-1">
+                  {/* browser chrome */}
+                  <div className="flex items-center gap-2 px-4 py-2.5 bg-olive-950/70 border-b border-cream/10">
+                    <span className="h-2.5 w-2.5 rounded-full bg-cream/25" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-cream/25" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-cream/25" />
+                    <span className="ml-3 rounded-md bg-cream/[0.06] px-3 py-1 text-[10px] tracking-wide text-cream/40">
+                      {shot.url}
+                    </span>
+                  </div>
+                  <img src={shot.src} alt={shot.alt} className="block w-full" loading="lazy" />
+                </div>
+                <figcaption className="mt-4 text-sm text-cream/55 leading-relaxed">
+                  {shot.caption}
+                </figcaption>
+              </motion.figure>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

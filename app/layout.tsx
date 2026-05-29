@@ -15,10 +15,35 @@ const inter = Inter({
   display: "swap",
 });
 
+const SITE_URL = "https://adga-solutions.netlify.app";
+
 export const metadata: Metadata = {
-  title: "ADGA Solutions | Practical Software for Produce Distributors",
+  metadataBase: new URL(SITE_URL),
+  title: "ADGA Solutions | Custom Software for Produce Distribution",
   description:
-    "ADGA Solutions partners with the distribution centers on the U.S.–Mexico border that move a significant share of America's fresh produce. We listen first, then build the simple, custom tools that make their work easier.",
+    "ADGA Solutions builds custom software and modern landing pages for produce distributors on the U.S.–Mexico border at Nogales. We listen first, then build the practical tools that make the work easier.",
+  keywords: [
+    "produce distribution software",
+    "Nogales produce",
+    "custom software",
+    "daily quote system",
+    "produce distributor websites",
+  ],
+  openGraph: {
+    title: "ADGA Solutions",
+    description:
+      "Tailor made software solutions for produce distribution businesses. We listen first, then build the practical tools that make the work easier.",
+    url: SITE_URL,
+    siteName: "ADGA Solutions",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ADGA Solutions",
+    description:
+      "Tailor made software solutions for produce distribution businesses.",
+  },
 };
 
 export default function RootLayout({
