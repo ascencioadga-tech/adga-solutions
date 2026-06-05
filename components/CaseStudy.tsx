@@ -117,13 +117,13 @@ export default function CaseStudy() {
             {[
               {
                 src: "/dqs-availability.png",
-                url: "adgasolutions.com/daily-quote",
+                url: "solvenza.com/daily-quote",
                 alt: "The Daily Quote System availability screen, with prices set per commodity size",
                 caption: "Set today's prices per size — type a dollar amount, “Market,” or “Call.”",
               },
               {
                 src: "/dqs-quote-sheet.png",
-                url: "adgasolutions.com/daily-quote/send",
+                url: "solvenza.com/daily-quote/send",
                 alt: "The send screen showing a branded daily quote sheet ready to email to buyers",
                 caption: "Pick recipients and send a branded quote sheet in seconds.",
               },

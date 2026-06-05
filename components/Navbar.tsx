@@ -33,13 +33,17 @@ export default function Navbar() {
         <div className="flex h-20 items-center justify-between">
           <a href="#" className="flex items-center gap-3">
             <img
-              src="/adga-mark.svg"
+              src={scrolled ? "/adga-mark.svg" : "/adga-mark-cream.svg"}
               alt=""
               aria-hidden
               className="h-9 w-9"
             />
-            <span className="font-serif text-xl font-semibold tracking-tight text-olive-800 leading-none">
-              ADGA Solutions
+            <span
+              className={`font-serif text-xl font-semibold tracking-tight leading-none transition-colors duration-300 ${
+                scrolled ? "text-olive-800" : "text-cream"
+              }`}
+            >
+              Solvenza
             </span>
           </a>
 
@@ -48,7 +52,11 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-charcoal-soft hover:text-olive-700 transition-colors duration-300 tracking-wide"
+                className={`text-sm font-medium transition-colors duration-300 tracking-wide ${
+                  scrolled
+                    ? "text-charcoal-soft hover:text-olive-700"
+                    : "text-cream/85 hover:text-cream"
+                }`}
               >
                 {link.label}
               </a>
@@ -58,7 +66,11 @@ export default function Navbar() {
           <div className="hidden md:flex items-center">
             <a
               href="#contact"
-              className="rounded-full bg-olive-700 px-5 py-2.5 text-sm font-semibold text-cream hover:bg-olive-800 transition-colors duration-300"
+              className={`rounded-full px-5 py-2.5 text-sm font-semibold transition-colors duration-300 ${
+                scrolled
+                  ? "bg-olive-700 text-cream hover:bg-olive-800"
+                  : "bg-sand text-dusk-deep hover:bg-sand-light"
+              }`}
             >
               Start a conversation
             </a>
@@ -70,17 +82,17 @@ export default function Navbar() {
             aria-label="Toggle menu"
           >
             <span
-              className={`block h-0.5 w-6 bg-charcoal transition-all duration-300 ${
+              className={`block h-0.5 w-6 transition-all duration-300 ${scrolled || mobileOpen ? "bg-charcoal" : "bg-cream"} ${
                 mobileOpen ? "rotate-45 translate-y-2" : ""
               }`}
             />
             <span
-              className={`block h-0.5 w-6 bg-charcoal transition-all duration-300 ${
+              className={`block h-0.5 w-6 transition-all duration-300 ${scrolled || mobileOpen ? "bg-charcoal" : "bg-cream"} ${
                 mobileOpen ? "opacity-0" : ""
               }`}
             />
             <span
-              className={`block h-0.5 w-6 bg-charcoal transition-all duration-300 ${
+              className={`block h-0.5 w-6 transition-all duration-300 ${scrolled || mobileOpen ? "bg-charcoal" : "bg-cream"} ${
                 mobileOpen ? "-rotate-45 -translate-y-2" : ""
               }`}
             />

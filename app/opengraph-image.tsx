@@ -4,7 +4,7 @@ import { ImageResponse } from "next/og";
 export const dynamic = "force-static";
 
 export const alt =
-  "ADGA Solutions — Tailor made software solutions for produce distribution businesses.";
+  "Solvenza — Tailor made software solutions for produce distribution businesses.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -45,7 +45,7 @@ export default function OpengraphImage() {
               letterSpacing: "-0.01em",
             }}
           >
-            ADGA Solutions
+            Solvenza
           </div>
         </div>
 

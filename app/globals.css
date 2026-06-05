@@ -17,6 +17,16 @@
   --color-charcoal: #1a1f14;
   --color-charcoal-soft: #353a2c;
 
+  /* Southwestern / desert warm tones */
+  --color-sand:   #e7d6b3;
+  --color-sand-light: #f1e6cd;
+  --color-clay:   #b9714a;
+  --color-clay-dark: #9d5733;
+  --color-amber:  #d39a4f;
+  --color-terra:  #c2683c;
+  --color-dusk:   #2a1c10;
+  --color-dusk-deep: #1c1208;
+
   --font-serif: var(--font-cormorant);
   --font-sans:  var(--font-inter);
 }

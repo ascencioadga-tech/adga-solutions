@@ -19,9 +19,9 @@ const SITE_URL = "https://adga-solutions.netlify.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "ADGA Solutions | Custom Software for Produce Distribution",
+  title: "Solvenza | Custom Software for Produce Distribution",
   description:
-    "ADGA Solutions builds custom software and modern landing pages for produce distributors on the U.S.–Mexico border at Nogales. We listen first, then build the practical tools that make the work easier.",
+    "Solvenza builds custom software and modern landing pages for produce distributors on the U.S.–Mexico border at Nogales. We listen first, then build the practical tools that make the work easier.",
   keywords: [
     "produce distribution software",
     "Nogales produce",
@@ -30,17 +30,17 @@ export const metadata: Metadata = {
     "produce distributor websites",
   ],
   openGraph: {
-    title: "ADGA Solutions",
+    title: "Solvenza",
     description:
       "Tailor made software solutions for produce distribution businesses. We listen first, then build the practical tools that make the work easier.",
     url: SITE_URL,
-    siteName: "ADGA Solutions",
+    siteName: "Solvenza",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "ADGA Solutions",
+    title: "Solvenza",
     description:
       "Tailor made software solutions for produce distribution businesses.",
   },

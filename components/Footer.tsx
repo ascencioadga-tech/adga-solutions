@@ -12,7 +12,7 @@ export default function Footer() {
               className="h-7 w-7"
             />
             <span className="font-serif text-lg font-semibold tracking-tight">
-              ADGA Solutions
+              Solvenza
             </span>
           </div>
 
@@ -31,7 +31,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 pt-6 border-t border-olive-800/70 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs text-cream/50">
-          <div>© {year} ADGA Solutions</div>
+          <div>© {year} Solvenza</div>
           <div className="italic font-serif text-sm">Built one company at a time.</div>
         </div>
       </div>

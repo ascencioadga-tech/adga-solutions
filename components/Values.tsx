@@ -33,7 +33,7 @@ export default function Values() {
           className="max-w-3xl"
         >
           <span className="inline-block text-xs font-semibold tracking-[0.25em] uppercase text-olive-700">
-            Why ADGA
+            Why Solvenza
           </span>
           <h2 className="mt-5 font-serif text-3xl sm:text-4xl lg:text-5xl font-light text-charcoal leading-[1.05] tracking-tight">
             What we believe.
