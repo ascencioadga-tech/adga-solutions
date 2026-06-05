@@ -19,7 +19,7 @@ const SITE_URL = "https://adga-solutions.netlify.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Solvenza | Custom Software for Produce Distribution",
+  title: "Solvenza | Custom-Made Software",
   description:
     "Solvenza builds custom software and modern landing pages for produce distributors on the U.S.–Mexico border at Nogales. We listen first, then build the practical tools that make the work easier.",
   keywords: [
