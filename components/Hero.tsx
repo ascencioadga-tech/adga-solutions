@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[100dvh] overflow-hidden bg-[#f4f1e8]">
+    <section className="relative min-h-[100dvh] overflow-hidden bg-[#f1f3e6]">
       <div className="absolute inset-0">
-        {/* light field — brighter at top and bottom */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#f8f5ee] via-[#e6e1d2] to-[#f8f5ee]" />
+        {/* light sage field — brighter at top and bottom */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#f4f6ec] via-[#dde4c6] to-[#f4f6ec]" />
 
-        {/* wide soft dark haze — slow breath */}
+        {/* wide soft olive haze — slow breath */}
         <motion.div
           aria-hidden
           initial={{ opacity: 0 }}
@@ -22,11 +22,11 @@ export default function Hero() {
           style={{
             transformOrigin: "50% 48%",
             background:
-              "radial-gradient(circle 1000px at 50% 48%, rgba(42,51,24,0.14) 0%, rgba(31,38,17,0.05) 50%, transparent 80%)",
+              "radial-gradient(circle 1000px at 50% 48%, rgba(79,93,47,0.16) 0%, rgba(47,55,28,0.06) 50%, transparent 80%)",
           }}
         />
 
-        {/* the dark orb — deep core + anamorphic streak + mid, breathing & drifting */}
+        {/* the deep olive orb — core + anamorphic streak + mid, breathing & drifting */}
         <motion.div
           aria-hidden
           initial={{ opacity: 0, scale: 0.95 }}
@@ -40,11 +40,11 @@ export default function Hero() {
           style={{
             transformOrigin: "50% 48%",
             background:
-              "radial-gradient(ellipse 780px 4px at 50% 48%, rgba(26,31,20,0.4) 0%, transparent 72%), radial-gradient(circle 150px at 50% 48%, rgba(18,23,13,0.62) 0%, transparent 70%), radial-gradient(circle 380px at 50% 48%, rgba(35,43,20,0.34) 0%, rgba(95,112,57,0.08) 66%, transparent 80%)",
+              "radial-gradient(ellipse 780px 4px at 50% 48%, rgba(42,51,24,0.42) 0%, transparent 72%), radial-gradient(circle 150px at 50% 48%, rgba(31,38,17,0.64) 0%, transparent 70%), radial-gradient(circle 380px at 50% 48%, rgba(58,70,34,0.36) 0%, rgba(95,112,57,0.1) 66%, transparent 80%)",
           }}
         />
 
-        {/* fine grain — dark flecks on the light field */}
+        {/* fine grain — deep olive flecks on the sage field */}
         <div
           aria-hidden
           className="absolute inset-0 opacity-[0.05]"
@@ -54,13 +54,13 @@ export default function Hero() {
           }}
         />
 
-        {/* inverse vignette — lifts the edges to light */}
+        {/* inverse vignette — lifts the edges to light sage */}
         <div
           aria-hidden
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(115% 92% at 50% 48%, transparent 30%, rgba(250,248,241,0.72) 100%)",
+              "radial-gradient(115% 92% at 50% 48%, transparent 30%, rgba(244,246,236,0.74) 100%)",
           }}
         />
       </div>

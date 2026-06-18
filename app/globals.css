@@ -33,11 +33,11 @@
 
 html {
   scroll-behavior: smooth;
-  background: #f4f1e8;
+  background: #f1f3e6;
 }
 
 body {
-  background: #f4f1e8;
+  background: #f1f3e6;
   color: #1a1f14;
   font-family: var(--font-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
