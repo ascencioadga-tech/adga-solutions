@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#070f17]">
+    <section className="relative min-h-[100dvh] overflow-hidden bg-[#070f17]">
       <div className="absolute inset-0">
         {/* sky */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#1f4356] via-[#122a38] to-[#070f17]" />

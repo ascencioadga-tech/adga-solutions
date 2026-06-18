@@ -16,7 +16,7 @@ export default function LoginPage() {
   const [show, setShow] = useState(false);
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#0b1a28]">
+    <main className="relative min-h-[100dvh] overflow-hidden bg-[#0b1a28]">
       {/* Twilight — same as the landing page */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-[#1f4356] via-[#142f3d] to-[#0b1c27]" />
@@ -97,7 +97,7 @@ export default function LoginPage() {
       </Link>
 
       {/* Login — floats directly on the twilight, no card */}
-      <div className="relative z-10 flex min-h-screen items-center justify-center px-6">
+      <div className="relative z-10 flex min-h-[100dvh] items-center justify-center px-6">
         {/* soft legibility halo so the floating text reads over the glow */}
         <div
           aria-hidden
