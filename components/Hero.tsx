@@ -1,60 +1,69 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#0b1a28]">
-      {/* Twilight — the sun mark, become the environment */}
+    <section className="relative min-h-screen overflow-hidden bg-[#070f17]">
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1f4356] via-[#142f3d] to-[#0b1c27]" />
+        {/* sky */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1f4356] via-[#122a38] to-[#070f17]" />
 
-        {/* glow — centered, grows and diminishes */}
+        {/* wide atmospheric bloom — slow breath */}
         <motion.div
           aria-hidden
-          initial={{ opacity: 0, scale: 0.97 }}
-          animate={{ opacity: [0.7, 1, 0.7], scale: [1, 1.18, 1] }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: [0.5, 0.85, 0.5], scale: [1, 1.1, 1] }}
           transition={{
-            opacity: { duration: 8, repeat: Infinity, ease: "easeInOut", delay: 0.3 },
-            scale: { duration: 8, repeat: Infinity, ease: "easeInOut", delay: 0.3 },
+            opacity: { duration: 13, repeat: Infinity, ease: "easeInOut" },
+            scale: { duration: 13, repeat: Infinity, ease: "easeInOut" },
           }}
           className="absolute inset-0"
           style={{
-            transformOrigin: "50% 52%",
+            transformOrigin: "50% 48%",
             background:
-              "radial-gradient(circle 440px at 50% 52%, rgba(244,246,240,0.5) 0%, rgba(168,182,138,0.30) 34%, rgba(95,112,57,0.12) 62%, rgba(11,26,40,0) 100%)",
+              "radial-gradient(circle 1000px at 50% 48%, rgba(150,168,120,0.18) 0%, rgba(95,112,57,0.06) 50%, transparent 80%)",
           }}
         />
 
-        <div className="absolute left-0 right-0 top-[55%] h-px bg-[#a8b68a]/30" />
-        <div className="absolute left-0 right-0 top-[58%] h-px bg-white/12" />
+        {/* the sun — hot core + anamorphic flare streak + mid glow, breathing & drifting */}
+        <motion.div
+          aria-hidden
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: [0.72, 1, 0.72], scale: [1, 1.2, 1], x: [0, 14, 0] }}
+          transition={{
+            opacity: { duration: 9, repeat: Infinity, ease: "easeInOut", delay: 0.2 },
+            scale: { duration: 9, repeat: Infinity, ease: "easeInOut", delay: 0.2 },
+            x: { duration: 23, repeat: Infinity, ease: "easeInOut" },
+          }}
+          className="absolute inset-0"
+          style={{
+            transformOrigin: "50% 48%",
+            background:
+              "radial-gradient(ellipse 780px 4px at 50% 48%, rgba(232,240,214,0.5) 0%, transparent 72%), radial-gradient(circle 150px at 50% 48%, rgba(252,253,248,0.6) 0%, transparent 70%), radial-gradient(circle 380px at 50% 48%, rgba(206,216,180,0.3) 0%, rgba(120,140,80,0.06) 66%, transparent 80%)",
+          }}
+        />
 
+        {/* film grain */}
         <div
           aria-hidden
-          className="absolute inset-0 opacity-[0.05]"
+          className="absolute inset-0 opacity-[0.06]"
           style={{
             backgroundImage: "radial-gradient(#f4f6f0 0.5px, transparent 0.5px)",
             backgroundSize: "3px 3px",
           }}
         />
 
-        <div className="absolute inset-0 bg-gradient-to-t from-[#081620]/60 via-transparent to-transparent" />
+        {/* vignette — frames the light, edges fall to near-black */}
+        <div
+          aria-hidden
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(115% 90% at 50% 48%, transparent 30%, rgba(3,8,13,0.82) 100%)",
+          }}
+        />
       </div>
-
-      {/* Client login — refined glass, set in from the edge */}
-      <Link
-        href="/login"
-        className="group absolute top-8 right-8 lg:top-10 lg:right-16 z-10 inline-flex items-center gap-2 px-1 py-1 text-[13px] font-medium tracking-wide text-white/70 transition-colors duration-300 hover:text-white"
-      >
-        Client Login
-        <svg
-          className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5"
-          fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-        </svg>
-      </Link>
     </section>
   );
 }
