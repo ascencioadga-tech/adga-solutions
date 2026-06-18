@@ -18,7 +18,7 @@ const inter = Inter({
 const SITE_URL = "https://adga-solutions.netlify.app";
 
 export const viewport: Viewport = {
-  themeColor: "#0b1a28",
+  themeColor: "#f4f1e8",
 };
 
 export const metadata: Metadata = {
