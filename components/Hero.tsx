@@ -1,69 +1,71 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
+import Link from "next/link";
+
+const EASE = [0.16, 1, 0.3, 1] as const;
 
 export default function Hero() {
+  const reduce = useReducedMotion();
+
   return (
-    <section className="relative min-h-[100dvh] overflow-hidden bg-[#f1f3e6]">
-      <div className="absolute inset-0">
-        {/* light sage field — brighter at top and bottom */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#f4f6ec] via-[#dde4c6] to-[#f4f6ec]" />
+    <section className="relative flex min-h-[100dvh] flex-col overflow-hidden bg-[#f0f0f0] text-[#1f2611]">
+      {/* ---- masthead ---- */}
+      <header className="relative z-20 flex items-center justify-between px-7 pt-7 lg:px-14 lg:pt-9">
+        <Link href="/" className="flex items-center gap-3">
+          <svg viewBox="0 0 200 200" className="h-[35px] w-[35px]" aria-hidden>
+            <defs>
+              <clipPath id="sv-horizon">
+                <rect x="0" y="0" width="200" height="134" />
+              </clipPath>
+            </defs>
 
-        {/* wide soft olive haze — slow breath for depth */}
-        <motion.div
-          aria-hidden
-          initial={{ opacity: 0 }}
-          animate={{ opacity: [0.4, 0.7, 0.4], scale: [1, 1.18, 1] }}
-          transition={{
-            opacity: { duration: 10, repeat: Infinity, ease: "easeInOut" },
-            scale: { duration: 10, repeat: Infinity, ease: "easeInOut" },
-          }}
-          className="absolute inset-0"
-          style={{
-            transformOrigin: "50% 48%",
-            background:
-              "radial-gradient(circle 1040px at 50% 48%, rgba(79,93,47,0.18) 0%, rgba(47,55,28,0.06) 50%, transparent 80%)",
-          }}
-        />
+            {/* the sun rises from behind the horizon */}
+            <g clipPath="url(#sv-horizon)">
+              <motion.path
+                d="M 30 120 A 70 70 0 0 1 170 120 Z"
+                fill="#3a4622"
+                initial={reduce ? { y: 0, opacity: 1 } : { y: 80, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 1.5, delay: 0.35, ease: EASE }}
+              />
+            </g>
 
-        {/* the olive orb — deep & defined, with a pronounced grow / shrink */}
-        <motion.div
-          aria-hidden
-          initial={{ opacity: 0, scale: 0.78 }}
-          animate={{ opacity: [0.5, 1, 0.5], scale: [0.78, 1.34, 0.78], x: [0, 16, 0] }}
-          transition={{
-            opacity: { duration: 8, repeat: Infinity, ease: "easeInOut", delay: 0.2 },
-            scale: { duration: 8, repeat: Infinity, ease: "easeInOut", delay: 0.2 },
-            x: { duration: 24, repeat: Infinity, ease: "easeInOut" },
-          }}
-          className="absolute inset-0"
-          style={{
-            transformOrigin: "50% 48%",
-            background:
-              "radial-gradient(ellipse 840px 5px at 50% 48%, rgba(31,38,17,0.5) 0%, transparent 72%), radial-gradient(circle 170px at 50% 48%, rgba(20,26,14,0.8) 0%, transparent 66%), radial-gradient(circle 410px at 50% 48%, rgba(42,51,24,0.42) 0%, rgba(79,93,47,0.1) 62%, transparent 80%)",
-          }}
-        />
+            {/* the horizon draws itself */}
+            <motion.line
+              x1="14"
+              y1="138"
+              x2="186"
+              y2="138"
+              stroke="#3a4622"
+              strokeWidth="8"
+              initial={reduce ? { pathLength: 1 } : { pathLength: 0 }}
+              animate={{ pathLength: 1 }}
+              transition={{ duration: 0.9, delay: 0.1, ease: EASE }}
+            />
+            <motion.line
+              x1="40"
+              y1="160"
+              x2="160"
+              y2="160"
+              stroke="#3a4622"
+              strokeWidth="4"
+              initial={reduce ? { pathLength: 1, opacity: 0.45 } : { pathLength: 0, opacity: 0 }}
+              animate={{ pathLength: 1, opacity: 0.45 }}
+              transition={{ duration: 0.9, delay: 0.35, ease: EASE }}
+            />
+          </svg>
 
-        {/* fine grain — deep olive flecks on the sage field */}
-        <div
-          aria-hidden
-          className="absolute inset-0 opacity-[0.05]"
-          style={{
-            backgroundImage: "radial-gradient(#1f2611 0.6px, transparent 0.6px)",
-            backgroundSize: "3px 3px",
-          }}
-        />
-
-        {/* inverse vignette — lifts the edges to light sage */}
-        <div
-          aria-hidden
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(115% 92% at 50% 48%, transparent 28%, rgba(244,246,236,0.78) 100%)",
-          }}
-        />
-      </div>
+          <motion.span
+            className="font-serif text-[22px] font-semibold tracking-tight text-[#3a4622]"
+            initial={reduce ? { opacity: 1, x: 0 } : { opacity: 0, x: -8 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1.1, delay: 0.85, ease: EASE }}
+          >
+            Solvenza
+          </motion.span>
+        </Link>
+      </header>
     </section>
   );
 }
